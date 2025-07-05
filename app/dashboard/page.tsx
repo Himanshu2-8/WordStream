@@ -1,7 +1,11 @@
+import {BlogDashboard} from "@/components/dashboard/blog-dashboard";
+import { Navbar } from "@/components/home/navbar";
+
 export default function Dashboard() {
     return (
         <div>
-            <h1>Dashboard</h1>
+          <Navbar/>
+          <BlogDashboard/>
         </div>
     )
 }

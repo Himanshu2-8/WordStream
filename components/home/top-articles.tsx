@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card } from "../ui/card";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -14,12 +15,13 @@ const TopArticles = () => {
         )}
       >
         <div className="p-6">
-          <Link href={`/articles/id`} className="block mb-4">
+          <Link href={`/articles/${123}`} className="block mb-4">
             <div className="relative mb-4 h-48 w-full overflow-hidden rounded-xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1612367980327-7454a7276aa7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm90ZWJvb2t8ZW58MHx8MHx8fDA%3D"
                 alt="Article"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div className="flex items-center gap-3 tex-sm text-gray-500">
