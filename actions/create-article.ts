@@ -17,9 +17,10 @@ cloudinary.config({
 
 
 const articleSchema = z.object({
-  title: z.string().min(3).max(100),
-  category: z.string().min(3).max(30),
-  content: z.string().min(10)
+  title: z.string().min(3, { message: 'Title must be at least 3 characters' }).max(100, { message: 'Title must be less than 100 characters' }),
+  category: z.string().min(3, { message: 'Category must be at least 3 characters' }).max(30, { message: 'Category must be less than 30 characters' }),
+  content: z.string().min(10, { message: 'Content must be at least 10 characters' }),
+  featuredImage: z.any().refine(file => file && file.size > 0, 'Featured image is required')
 })
 
 type ArticleFormState = {
@@ -33,10 +34,13 @@ type ArticleFormState = {
 }
 
 export const createArticle = async (prevState: ArticleFormState, formData: FormData): Promise<ArticleFormState> => {
+  const imageFile = formData.get('featuredImage') as File | null;
+  
   const validate = articleSchema.safeParse({
     title: formData.get('title'),
     category: formData.get('category'),
-    content: formData.get('content')
+    content: formData.get('content'),
+    featuredImage: imageFile
   });
   if (!validate.success) {
     return {
@@ -52,13 +56,12 @@ export const createArticle = async (prevState: ArticleFormState, formData: FormD
     }
   }
 
-  const imageFile = formData.get('featuredImage') as File | null;
-  if (!imageFile || imageFile.name === "undefined") {
+  if (!imageFile || imageFile.size === 0) {
     return {
       errors: {
-        featuredImage: ["Image is required"]
-      }
-    }
+        featuredImage: ['Featured image is required'],
+      },
+    };
   }
 
   const imageBuffer = await imageFile.arrayBuffer();
@@ -123,7 +126,7 @@ export const createArticle = async (prevState: ArticleFormState, formData: FormD
       return{
         errors:{
           formErrors:["Something went wrong"]
-    }
+      }
       }
     }
   }

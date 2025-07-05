@@ -69,7 +69,8 @@ export const CreateArticles = () => {
 
             <div>
               <Label className="mb-2">Feature an Image</Label>
-              <Input type="file" id="feature-image" name="feature-image" accept="image/*" />
+              <Input type="file" id="featuredImage" name="featuredImage" accept="image/*" />
+              {formState.errors.featuredImage && <span className="text-red-500">{formState.errors.featuredImage[0]}</span>}
             </div>
             <div className="space-y-2">
               <Label>Content</Label>

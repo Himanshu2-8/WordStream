@@ -4,6 +4,8 @@ import { Navbar } from "@/components/home/navbar";
 import TopArticles from "@/components/home/top-articles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Suspense } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -19,13 +21,16 @@ export default function Home() {
             <p className="mt-4 text-lg text-gray-300 font-medium max-w-2xl mx-auto">Discover our most popular content</p>
           </div>
         </div>
-        <TopArticles />
+
+        <Suspense fallback={<div><Loader2 className="animate-spin" /></div>}>
+          <TopArticles />
+        </Suspense>
         <div className="mt-12 text-center">
-          <Link 
-            href="/articles" 
+          <Link
+            href="/articles"
             className="inline-block transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg"
           >
-            <Button 
+            <Button
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
@@ -34,7 +39,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <BlogFooter/>
+      <BlogFooter />
     </div>
   );
 }
