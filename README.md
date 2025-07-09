@@ -4,26 +4,24 @@ WordStream is a modern, full-stack blog and content publishing platform built wi
 
 ## Features
 
--   **User Authentication:** Secure user management powered by Clerk.
--   **Article Management:** Create, edit, and publish articles with rich text content.
--   **Rich Text Editor:** Integrated Tiptap editor for a seamless writing experience.
--   **Image Uploads:** Cloudinary integration for efficient image hosting and delivery.
--   **Commenting System:** Users can comment on articles.
--   **Liking Functionality:** Users can like articles.
--   **Theming:** Light and dark mode support.
--   **Responsive Design:** Built with Tailwind CSS for a mobile-first approach.
+- **User Authentication:** Secure user management powered by Clerk.
+- **Article Management:** Create, edit, and publish articles with rich text content.
+- **Rich Text Editor:** Integrated Tiptap editor for a seamless writing experience.
+- **Image Uploads:** Cloudinary integration for efficient image hosting and delivery.
+- **Theming:** Light and dark mode support.
+- **Responsive Design:** Built with Tailwind CSS for a mobile-first approach.
 
 ## Technologies Used
 
--   **Framework:** Next.js 15 (App Router)
--   **Language:** TypeScript
--   **Styling:** Tailwind CSS, Radix UI
--   **Database:** PostgreSQL
--   **ORM:** Prisma
--   **Authentication:** Clerk
--   **Image Hosting:** Cloudinary
--   **Rich Text Editor:** Tiptap
--   **Validation:** Zod
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS, Radix UI
+- **Database:** PostgreSQL
+- **ORM:** Prisma
+- **Authentication:** Clerk
+- **Image Hosting:** Cloudinary
+- **Rich Text Editor:** Tiptap
+- **Validation:** Zod
 
 ## Getting Started
 
@@ -33,9 +31,9 @@ Follow these steps to set up and run WordStream locally.
 
 Make sure you have the following installed:
 
--   Node.js (LTS recommended)
--   npm, yarn, pnpm, or bun
--   PostgreSQL database
+- Node.js (LTS recommended)
+- npm, yarn, pnpm, or bun
+- PostgreSQL database
 
 ### Installation
 
@@ -106,8 +104,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To learn more about Next.js, take a look at the following resources:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
@@ -116,3 +114,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
