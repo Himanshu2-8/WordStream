@@ -2,36 +2,32 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
-export const Hero = () => {
+export const Hero = async () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-900 to-indigo-900">
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-gradient-to-r from-slate-900 to-blue-900">
       <div className="absolute inset-0 before:absolute before:left-1/4 before:top-0 before:h-[600px] before:w-[600px] before:rounded-full before:bg-gradient-to-r before:from-violet-600/20 before:to-indigo-600/20 before:blur-3xl">
         <div className="container relative mx-auto h-full flex items-center px-4 py-16 md:py-24">
           <div className="w-full lg:w-1/2 pr-0 lg:pr-12 flex flex-col">
             <div className="w-full text-left space-y-6">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl leading-tight">
-                Explore the world through{" "}
-                <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
-                  Words
+                Where Words Create{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Worlds
                 </span>
               </h1>
 
               <p className="text-lg leading-relaxed text-gray-200/90 md:text-xl md:leading-8">
-                Discover insightful articles, thought-provoking stories, and
-                expert perspectives on technologies, lifestyle, and innovation.
+                Explore Ideas. Share Stories. Make an Impact.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button className="rounded-full px-8 py-6 text-lg font-medium transition-all hover:scale-105">
-                  Start Reading
-                </Button>
-                <Button
-                  variant={"outline"}
-                  className="rounded-full px-8 py-6 text-lg font-medium border-2 border-white/20 hover:bg-white/10 hover:border-white/30 transition-all hover:scale-105"
-                >
-                  Explore Topics
-                </Button>
+                <Link href="/articles">
+                  <Button className="rounded-full px-8 py-6 text-lg font-medium transition-all hover:scale-105">
+                    Start Reading
+                  </Button>
+                </Link>
               </div>
             </div>
 

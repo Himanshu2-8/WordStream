@@ -15,7 +15,7 @@ export const Navbar = () => {
         <div className="flex h-12 items-center justify-between">
           <Link href="/" className="text-foreground hover:text-foreground/80 transition-colors">
             <span className="font-bold text-2xl">
-              <span className="bg-gradient-to-r from-purple-600 to bg-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">Word</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent">Word</span>
               <span className="text-foreground">Stream</span>
             </span>
           </Link>

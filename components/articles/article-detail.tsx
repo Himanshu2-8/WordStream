@@ -1,5 +1,4 @@
 import { Prisma } from "@/app/generated/prisma"
-import Image from "next/image"
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar"
 
 type ArticleDetailProps = {
@@ -18,8 +17,8 @@ type ArticleDetailProps = {
 
 export default function ArticleDetail({ article }: ArticleDetailProps) {
     return (
-        <div className="min-h-screen bg-background">
-            <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="bg-background">
+            <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
                 <article className="mx-auto max-w-3xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 sm:p-10 lg:p-12">
                     {/* Category */}
                     <div className="mb-6 text-left">
@@ -64,7 +63,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                     {/* Article Content */}
                     <div className="prose prose-invert max-w-none pt-8 text-left prose-p:leading-relaxed prose-p:mb-6">
                         {article.content && (
-                            <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                            <div dangerouslySetInnerHTML={{ __html: article.content.length>100 ? article.content.slice(0, 100) + '...' : article.content }} />
                         )}
                     </div>
                 </article>

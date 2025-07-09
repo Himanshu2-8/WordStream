@@ -37,42 +37,33 @@ const DashboardSidebar = () => {
   return (
     <div className="h-full px-4 py-6">
       <div className="flex items-center gap-2 mb-8 px-2">
-        <Link href="/">
-          <span className="text-xl font-bold">WordStream</span>
-        </Link>
+        <nav className="space-y-2">
+          <Link href={"/dashboard"}>
+            <Button className="w-full justify-start gap-2" variant="ghost">
+              <LayoutDashboard className="w-5 h-5" />
+              Overview
+            </Button>
+          </Link>
+          <Link href={"/dashboard/articles"}>
+            <Button className="w-full justify-start gap-2" variant="ghost">
+              <FileIcon className="w-5 h-5" />
+              Articles
+            </Button>
+          </Link>
+          <Link href={"/dashboard"}>
+            <Button className="w-full justify-start gap-2" variant="ghost">
+              <Settings className="w-5 h-5" />
+              Settings
+            </Button>
+          </Link>
+          <Link href={"/dashboard"}>
+            <Button className="w-full justify-start gap-2" variant="ghost">
+              <BarChart className="w-5 h-5" />
+              Analysis
+            </Button>
+          </Link>
+        </nav>
       </div>
-      <nav className="space-y-2">
-        <Link href={"/dashboard"}>
-          <Button className="w-full justify-start gap-2" variant="ghost">
-            <LayoutDashboard className="w-5 h-5" />
-            Overview
-          </Button>
-        </Link>
-        <Link href={"/dashboard/articles/create"}>
-          <Button className="w-full justify-start gap-2" variant="ghost">
-            <FileIcon className="w-5 h-5" />
-            Articles
-          </Button>
-        </Link>
-        <Link href={"/dashboard"}>
-          <Button className="w-full justify-start gap-2" variant="ghost">
-            <MessageCircle className="w-5 h-5" />
-            Comments
-          </Button>
-        </Link>
-        <Link href={"/dashboard"}>
-          <Button className="w-full justify-start gap-2" variant="ghost">
-            <Settings className="w-5 h-5" />
-            Settings
-          </Button>
-        </Link>
-        <Link href={"/dashboard"}>
-          <Button className="w-full justify-start gap-2" variant="ghost">
-            <BarChart className="w-5 h-5" />
-            Analysis
-          </Button>
-        </Link>
-      </nav>
     </div>
   );
 };

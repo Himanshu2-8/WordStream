@@ -5,10 +5,22 @@ import {
   FileText,
   BarChart3,
   Users,
-  TrendingUp,
 } from "lucide-react";
+import { currentUser } from "@clerk/nextjs/server";
+import prisma from "@/lib/prisma";
 
-export const BlogDashboard = () => {
+export const BlogDashboard = async() => {
+  const user=await currentUser();
+  const authUser=await prisma.user.findUnique({
+    where:{
+      clerkUserId:user?.id
+    }
+  })
+  const articles=await prisma.articles.findMany({
+    where:{
+      authorId:authUser?.id
+    }
+  })
   return (
     <div className="flex-1 p-4 md:p-8 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -38,7 +50,7 @@ export const BlogDashboard = () => {
                 <p className="text-sm font-medium text-gray-600">
                   Total Articles
                 </p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">24</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1">{articles.length}</p>
               </div>
               <div className=" p-3 rounded-full">
                 <FileText className="w-6 h-6 text-blue-600" />
