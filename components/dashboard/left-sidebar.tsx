@@ -6,7 +6,6 @@ import {
   BarChart,
   FileIcon,
   LayoutDashboard,
-  MessageCircle,
   Settings,
 } from "lucide-react";
 import { useState } from "react";
@@ -37,33 +36,39 @@ const DashboardSidebar = () => {
   return (
     <div className="h-full px-4 py-6">
       <div className="flex items-center gap-2 mb-8 px-2">
-        <nav className="space-y-2">
-          <Link href={"/dashboard"}>
-            <Button className="w-full justify-start gap-2" variant="ghost">
-              <LayoutDashboard className="w-5 h-5" />
-              Overview
-            </Button>
+        <Link href="/" className="text-foreground hover:text-foreground/80 transition-colors">
+            <span className="font-bold text-2xl">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent">Word</span>
+              <span className="text-foreground">Stream</span>
+            </span>
           </Link>
-          <Link href={"/dashboard/articles"}>
-            <Button className="w-full justify-start gap-2" variant="ghost">
-              <FileIcon className="w-5 h-5" />
-              Articles
-            </Button>
-          </Link>
-          <Link href={"/dashboard"}>
-            <Button className="w-full justify-start gap-2" variant="ghost">
-              <Settings className="w-5 h-5" />
-              Settings
-            </Button>
-          </Link>
-          <Link href={"/dashboard"}>
-            <Button className="w-full justify-start gap-2" variant="ghost">
-              <BarChart className="w-5 h-5" />
-              Analysis
-            </Button>
-          </Link>
-        </nav>
       </div>
+      <nav className="space-y-2">
+        <Link href={"/dashboard"}>
+          <Button className="w-full justify-start gap-2" variant="ghost">
+            <LayoutDashboard className="w-5 h-5" />
+            Overview
+          </Button>
+        </Link>
+        <Link href={"/dashboard/articles"}>
+          <Button className="w-full justify-start gap-2" variant="ghost">
+            <FileIcon className="w-5 h-5" />
+            Articles
+          </Button>
+        </Link>
+        <Link href={"/dashboard"}>
+          <Button className="w-full justify-start gap-2" variant="ghost">
+            <Settings className="w-5 h-5" />
+            Settings
+          </Button>
+        </Link>
+        <Link href={"/dashboard"}>
+          <Button className="w-full justify-start gap-2" variant="ghost">
+            <BarChart className="w-5 h-5" />
+            Analysis
+          </Button>
+        </Link>
+      </nav>
     </div>
   );
 };
